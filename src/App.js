@@ -1,27 +1,23 @@
-import logo from './logo.svg';
-import { Routes, Route, Link } from "react-router-dom";
-import FAQ  from './pages/FAQ';
-import Home  from './pages/Home';
-import About  from './pages/About';
-import NotFound404  from './pages/NotFound404';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import Todo from './pages/Todo';
+import NotFound404 from './pages/NotFound404';
+// import LoginLayout from './components/LoginLayout';
+import './style/all.css';
 
-
-
-
-
+import 'https://kit.fontawesome.com/0f3f38a034.js';
 
 
 
 function App() {
   return (
     <div className="App">
-        <h1>Welcome to React Router!</h1>
-        {/* 住側路由表 */}
+
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="FAQ" element={<FAQ />} />
+        <Route path="/" element={<Login />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="todo" element={<Todo />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
     </div>

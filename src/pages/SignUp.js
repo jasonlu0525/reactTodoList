@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 // import { Link, useNavigate, } from 'react-router-dom';
 import SideImages from "../components/SideImages";
 import { ApiSignUp } from "../util/api"
+import { setTitle } from '../util/title';
 export default function SignUp() {
   // const navigate = useNavigate();
-
+  setTitle("註冊帳號")
   const { register, handleSubmit, formState: { errors }, watch } = useForm({
     mode: "onChange"
   })

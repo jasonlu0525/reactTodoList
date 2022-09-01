@@ -63,6 +63,33 @@ const ApiSignUp = async ({ data }) => {
     }
 }
 
+const ApiGetToDoList = async ({ token }) => {
+    try {
+        const res = await axios.get("https://todoo.5xcamp.us/todos", {
+            headers:{
+                Authorization : token
+            }
+        })
+        // 寫入 token
+        // Swal.fire({
+        //     icon: "success",
+        //     title: res.data.message,
+        //     // text: 'Something went wrong!',
+        //     showConfirmButton: false,
+        //     timer: 1000
+        // });
+        return res.data;
+    } catch (error) {
+        console.dir(error)
+        Swal.fire({
+            icon: "error",
+            title: error.response.data.message,
+            // text: 'Something went wrong!',
+            showConfirmButton: false,
+            timer: 1000
+        });
+        return Promise.reject(error);
+    }
+}
 
-
-export { ApiLogin,ApiSignUp } 
+export { ApiLogin,ApiSignUp,ApiGetToDoList } 

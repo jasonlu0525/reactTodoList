@@ -6,11 +6,13 @@ import LoadingOverlay from 'react-loading-overlay';
 
 import { ApiLogin } from "../util/api"
 import { useState } from 'react';
+import { setTitle } from '../util/title';
 
 export default function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm({
         // mode: "onChange"
     })
+    setTitle("登入帳號")
     const navigate = useNavigate()
     const [isActive, changeActice] = useState(false);
     const login = async (data) => {

@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/jasonlu0525/React/static/css/main.b66d188c.css",
-    "main.js": "/jasonlu0525/React/static/js/main.0709762c.js",
-    "static/js/787.633816a4.chunk.js": "/jasonlu0525/React/static/js/787.633816a4.chunk.js",
-    "static/media/404 Error-pana.png": "/jasonlu0525/React/static/media/404 Error-pana.6b2f4dac7f3c650977fb.png",
-    "index.html": "/jasonlu0525/React/index.html",
-    "main.b66d188c.css.map": "/jasonlu0525/React/static/css/main.b66d188c.css.map",
-    "main.0709762c.js.map": "/jasonlu0525/React/static/js/main.0709762c.js.map",
-    "787.633816a4.chunk.js.map": "/jasonlu0525/React/static/js/787.633816a4.chunk.js.map"
+    "main.css": "/jasonlu0525/reactTodoList/static/css/main.b66d188c.css",
+    "main.js": "/jasonlu0525/reactTodoList/static/js/main.826a962c.js",
+    "static/js/787.633816a4.chunk.js": "/jasonlu0525/reactTodoList/static/js/787.633816a4.chunk.js",
+    "static/media/404 Error-pana.png": "/jasonlu0525/reactTodoList/static/media/404 Error-pana.6b2f4dac7f3c650977fb.png",
+    "index.html": "/jasonlu0525/reactTodoList/index.html",
+    "main.b66d188c.css.map": "/jasonlu0525/reactTodoList/static/css/main.b66d188c.css.map",
+    "main.826a962c.js.map": "/jasonlu0525/reactTodoList/static/js/main.826a962c.js.map",
+    "787.633816a4.chunk.js.map": "/jasonlu0525/reactTodoList/static/js/787.633816a4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b66d188c.css",
-    "static/js/main.0709762c.js"
+    "static/js/main.826a962c.js"
   ]
 }

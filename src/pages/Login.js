@@ -2,30 +2,39 @@
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate, } from 'react-router-dom';
 import SideImages from "../components/SideImages";
-import LoadingOverlay from 'react-loading-overlay';
+
 
 import { ApiLogin } from "../util/api"
 import { useState } from 'react';
 import { setTitle } from '../util/title';
+import { useAuth, useUserInfo } from "../util/context";
 
 export default function Login() {
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        // mode: "onChange"
-    })
+    const { register, handleSubmit, formState: { errors } } = useForm({})
+    const { token, updateToken } = useAuth();
+    const { userInfo, updateUserInfo } = useUserInfo();
     setTitle("登入帳號")
     const navigate = useNavigate()
     const [isActive, changeActice] = useState(false);
-    const login = async (data) => {
-        console.log(data);
+    const login = async (formData) => {
         changeActice(true)
-        await ApiLogin({ data })
+        const res = await ApiLogin({ formData })
+        const { data } = res
+        const { authorization } = res.headers
+        // 更新 token 
+        updateToken(authorization);
+
+        //存入 localstorage
+        localStorage.setItem('token', JSON.stringify(authorization));
+        localStorage.setItem('userInfo', JSON.stringify(data));
+
+        updateUserInfo(data)
         changeActice(false)
-        navigate("/todo")
+        navigate("/todo", { replace: true })
     }
 
     return (
         <>
-            {/* <LoadingOverlay active={isActive} /> */}
             <div id="loginPage" className="bg-yellow">
                 <div className="conatiner loginPage vhContainer ">
                     <SideImages />

@@ -1,4 +1,4 @@
-export  function setTitle(title) {
-document.title= title 
+export function setTitle(title) {
+  document.title = title
 
-  }
+}

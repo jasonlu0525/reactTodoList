@@ -1,19 +1,17 @@
 
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-// import { Link, useNavigate, } from 'react-router-dom';
 import SideImages from "../components/SideImages";
 import { ApiSignUp } from "../util/api"
 import { setTitle } from '../util/title';
 export default function SignUp() {
-  // const navigate = useNavigate();
+
   setTitle("註冊帳號")
   const { register, handleSubmit, formState: { errors }, watch } = useForm({
     mode: "onChange"
   })
 
   const signUp = async data => {
-    console.log(data);
     delete data.checkpassword;
     await ApiSignUp({data});
   }
@@ -58,10 +56,7 @@ export default function SignUp() {
               <span>{errors.checkpassword?.message} </span>
               <input className="formControls_btnSubmit" type="submit" value="註冊帳號" />
               <Link className="formControls_btnLink" to="/">登入</Link>
-              {/* validate: (value) => {
-                    if (watch('password') !== value) {
-                      return "兩次密碼輸入不同";
-                    } */}
+
             </form>
           </div>
         </div>
